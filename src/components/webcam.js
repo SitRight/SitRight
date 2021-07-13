@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Webcam from "react-webcam";
-import Button from '../button';
 
 const videoConstraints = {
     width: 400,

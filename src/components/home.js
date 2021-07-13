@@ -1,8 +1,8 @@
 import './homeStyles.css'
-import { WebcamCapture} from '../Webcam/Webcam'
+import { WebcamCapture} from './Webcam'
 import React from 'react';
 import PostureSelect from './select';
-import Button from '../button';
+import Button from './button';
 
 const Home = () => {
 
