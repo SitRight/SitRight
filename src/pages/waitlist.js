@@ -44,14 +44,14 @@ const IndexPage = () => {
           id="name"
           type="text"
           onChange={handleChange}
-          value={formState.name}
+          defaultValue={formState.name}
           placeholder="Enter Your Name"
         />
         <input
           id="email"
           type="text"
           onChange={handleChange}
-          value={formState.email}
+          defaultValue={formState.email}
           placeholder="Enter Your Email"
         />
         <button type="submit">Submit</button>
