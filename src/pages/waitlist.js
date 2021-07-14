@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 //import Form from "../components/Form/form"
 import CallToAction from "../components/cta"
 const IndexPage = () => {
-  const [formState, setFormState] = useState({
+  const [state, setState] = useState({
     name: "",
     email: "",
   })
@@ -17,8 +17,8 @@ const IndexPage = () => {
   }
 
   const handleChange = e => {
-    setFormState({
-      ...formState,
+    setState({
+      ...state,
       [e.target.name]: e.target.value,
     })
   }
@@ -27,7 +27,7 @@ const IndexPage = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formState })
+      body: encode({ "form-name": "contact", ...state })
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
@@ -43,15 +43,17 @@ const IndexPage = () => {
         <input
           id="name"
           type="text"
+          name="name"
           onChange={handleChange}
-          defaultValue={formState.name}
+          value={state.name}
           placeholder="Enter Your Name"
         />
         <input
           id="email"
           type="text"
+          name="email"
           onChange={handleChange}
-          defaultValue={formState.email}
+          value={state.email}
           placeholder="Enter Your Email"
         />
         <button type="submit">Submit</button>
