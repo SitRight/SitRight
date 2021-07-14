@@ -4,32 +4,37 @@ import { Link } from "gatsby"
 import TextField from '@material-ui/core/TextField';
 
 const Form = () => {
-  const [data, setData] = useState({
-    email: ""
+  const [emailData, setEmailData] = useState({
+    email: "",
   });
 
-  const { email } =  data;
+  const { email } =  emailData;
 
   const handleChange = (e) => {
-    setData({ ...data, [e.target.email]: e.target.value });
+    setEmailData({ 
+      ...emailData, 
+      [e.target.name]: e.target.value, 
+    });
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://v1.nocodeapi.com/sitright/google_sheets/brlkDKHNfTNVAngx?tabId=Sheet1", {
+      const response = await fetch("https://v1.nocodeapi.com/sitright/google_sheets/brlkDKHNfTNVAngx?tabId=Sheet1?", {
         method: "POST",
         headers: {
-          "Content-Type": 'application/json'
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify([email, new Date().toLocaleString])
+        body: JSON.stringify([
+            [email, new Date().toLocaleString],
+          ]),
         }
       );
       await response.json()
-      setData({...data, email:''})
-
-    } catch (error) {
+      setEmailData({...emailData, email: ""})
+    }
+    catch (error) {
       console.log(error)
     }
   }
@@ -62,6 +67,7 @@ const Form = () => {
               <TextField
                 onChange={handleChange}
                 id="outlined-helperText"
+                name="email"
                 label="Email"
                 variant="outlined"
                 defaultValue={email}
@@ -69,6 +75,7 @@ const Form = () => {
               </TextField>
               <div style= {{width: "25px"}}></div>
               <Button type="submit"><Link style={{textDecoration: "none", color: "white"}} to="/thank-you">Submit</Link></Button>
+              <button type="submit"></button>
             </form>
         </div>
         <br></br>
