@@ -23,7 +23,7 @@ const Footer = ({ siteTitle }) => (
       <div style={{ color: COLORS.blue, fontWeight: 700 }}>
         <a
           style={{ textDecoration: "none" }}
-          href=""
+          href="http://google.com"
         >
           Contact Us
         </a>

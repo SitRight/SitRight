@@ -34,7 +34,7 @@ const Header = ({ siteTitle }) => (
       <Button>
         <Link style={{textDecoration: "none", color: "white"}} to="/waitlist">Join the Waitlist</Link></Button>
       <div style= {{width: "25px"}}></div>
-      <Button><Link style={{textDecoration: "none", color: "white"}} to="/app">Contribute Images</Link></Button>
+      <Button><Link style={{textDecoration: "none", color: "white"}} to="/webcam">Contribute Images</Link></Button>
     </div>
     <br></br>
     <br></br>

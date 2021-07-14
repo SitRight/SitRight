@@ -38,11 +38,11 @@ const Email = () => {
     return (
         <form onSubmit={handleSubmit}>
           <TextField
+            onChange={handleChange}
             id="outlined-helperText"
             label="Email"
             variant="outlined"
             value={email}
-            onChange={handleChange}
           >
           </TextField>
         </form>
