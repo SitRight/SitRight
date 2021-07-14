@@ -1,5 +1,5 @@
 import '../components/homeStyles.css'
-import { WebcamCapture} from '../components/Camera'
+import { WebcamCapture} from '../components/camera'
 import React from 'react';
 import PostureSelect from '../components/select';
 import Button from '../components/button';
